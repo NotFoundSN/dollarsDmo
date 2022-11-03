@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&display=swap');
+@import url('antd/dist/antd.css');
+@import url('./navbar.css');
+@import url('./arena.css');
+@import url('./tabla.css');
+
+:root {
+    --blanco: #F8F8FF;
+    --violetaClaro: #8F8EBF;
+    --violetaMedio: #5F5DA6;
+    --violetaOscuro: #4F4D8C;
+    --violetaAzul: #2E4159;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: black;
+    background-image:  url('../assets/dollars.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.banner {
+    width: 100%;
+    height: 6rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    background-image:  url('../assets/digimonBanner2.png');
+    background-position: center;
+}
+
+.fondo {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    min-width: 100%;
+    opacity: 0.8;
+}
