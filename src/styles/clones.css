@@ -19,22 +19,14 @@
     justify-content: center;
     justify-items: center;
     align-content: center;
+    text-shadow: 0.2rem 0.2rem 0.4rem black;
 }
 
 .campo {
     padding: 0.5rem;
 }
 
-.inputCampo {
-    background-color: var(--violetaClaro);
-    text-align: center;
-    font-size: 1.6rem;
-    color: black;
-    font-weight: 700;
-    width: 12rem;
-    margin-left: 1rem;
-    padding: 0.2rem;
-}
+
 
 .ResultadoClones {
     display: flex;
@@ -46,6 +38,7 @@
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
+    text-shadow: 0.2rem 0.2rem 0.4rem black;
 }
 
 @media (max-width: 1700px) {   

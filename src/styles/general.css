@@ -1,0 +1,63 @@
+/* Texto */
+
+.textoBlanco {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 0.2rem 0.2rem 0.4rem black;
+}
+
+/* Botones */
+.cuerpoBoton {
+    background-color: var(--violetaOscuro);
+    padding: 0.3rem 1rem;
+    border: 1;
+    width: 45vw;
+    border-radius: 0.3rem;
+    text-align: center;
+    box-shadow: 0.2rem 0.2rem 0.3rem 0rem var(--violetaAzul);
+    margin: 0.35rem;
+}
+
+.cuerpoBoton:hover {
+    background-color: var(--violetaMedio);
+    color: #AB931B;
+}
+
+.inputCampo {
+    background-color: var(--violetaClaro);
+    text-align: center;
+    font-size: 1.6rem;
+    color: black;
+    font-weight: 700;
+    width: 12rem;
+    margin-left: 1rem;
+    padding: 0.2rem;
+}
+
+/* Tablas */
+.tabla {
+    background-color: var(--violetaMedioAlpha);
+    padding: 1rem 0rem;
+    border-bottom-style: solid;
+    border-width: 0.1rem;
+    color: white;
+    text-align: center;
+}
+
+.tituloTabla {
+    background-color: var(--violetaOscuroAlpha);
+}
+.textoTabla {
+    font-size: 1rem;
+}
+
+@media (min-width: 600px) {
+    .textoBlanco {
+        font-size: 1.6rem;
+    }
+    
+    .cuerpoBoton {
+        width: 12rem;
+    }
+}

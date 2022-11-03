@@ -4,10 +4,10 @@ export default function Layout() {
     return (
         <>
             <div className="NavBar">
-                <NavLink className='linkNavBar' to="/arena"><div className="botonNavBar"> Arena </div></NavLink>
-                <NavLink className='linkNavBar' to="/clones"><div className="botonNavBar"> Clones </div></NavLink>
-                <NavLink className='linkNavBar' to="/trascender"><div className="botonNavBar"> Trascender </div></NavLink>
-                <NavLink className='linkNavBar' to="/foro"><div className="botonNavBar"> Foro </div></NavLink>
+                <NavLink className='textoBlanco cuerpoBoton' to="/arena"><div className=""> Arena </div></NavLink>
+                <NavLink className='textoBlanco cuerpoBoton' to="/clones"><div className=""> Clones </div></NavLink>
+                <NavLink className='textoBlanco cuerpoBoton' to="/trascender"><div className=""> Trascender </div></NavLink>
+                <NavLink className='textoBlanco cuerpoBoton' to="/foro"><div className=""> Foro </div></NavLink>
             </div>
         </>
     )
