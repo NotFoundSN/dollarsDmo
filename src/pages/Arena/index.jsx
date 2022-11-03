@@ -18,7 +18,7 @@ export default function Arena() {
     return (
         <>
           <div className="fondo">
-            <div className='tablaArena'>
+            <div className='TablaArena'>
                 <Tabla pisos={data} />
             </div>
           </div>

@@ -3,13 +3,18 @@
 @import url('./navbar.css');
 @import url('./arena.css');
 @import url('./tabla.css');
+@import url('./clones.css');
 
 :root {
-    --blanco: #F8F8FF;
+    --blanco: #f8f8ff;
     --violetaClaro: #8F8EBF;
+    --violetaClaroAlpha: rgba(143, 142, 191, 0.6);
     --violetaMedio: #5F5DA6;
+    --violetaMedioAlpha: rgba(95, 93, 166, 0.8);
     --violetaOscuro: #4F4D8C;
+    --violetaOscuroAlpha: rgba(79, 77, 140, 0.76);
     --violetaAzul: #2E4159;
+    --violetaAzulAlpha: rgba(46, 65, 89, 0.829);
 }
 
 * {
@@ -38,6 +43,6 @@ body {
 .fondo {
     padding-bottom: 2rem;
     padding-top: 2rem;
-    min-width: 100%;
-    opacity: 0.8;
+    display: flex;
+    justify-content: center;
 }

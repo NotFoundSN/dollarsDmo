@@ -4,7 +4,7 @@
     width: 100%;
     flex-direction: row;
     justify-content: space-evenly; 
-    padding: 0.3rem 0rem;
+    flex-wrap: wrap;
 }
 
 .botonNavBar {
@@ -15,24 +15,19 @@
     max-width: 12rem;
     border-radius: 0.3rem;
     text-align: center;
+    box-shadow: 0.2rem 0.2rem 0.3rem 0rem var(--violetaAzul);
+    margin: 0.35rem;
+    
+}
+
+.botonNavBar:hover {
+    background-color: var(--violetaMedio);
+    color: #AB931B;
 }
 
 .linkNavBar {
     color: white;
     font-size: 1.3rem;
     font-weight: 600;
+    text-shadow: 0.5rem 0.5rem 0.3rem 0rem var(--violetaAzul);
 }
-
-/*
-#392E40
-#0583F2
-#D97904
-#733702
-#F20505
-
-#6D56BF
-#1F3473
-#0554F2
-#056CF2
-#D9805F
-*/

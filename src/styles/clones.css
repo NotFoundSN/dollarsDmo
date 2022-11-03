@@ -1,0 +1,68 @@
+.TablaClones {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    background-color: var(--violetaMedioAlpha);
+    width: 70%;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.FormularioClones {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.campo {
+    padding: 0.5rem;
+}
+
+.inputCampo {
+    background-color: var(--violetaClaro);
+    text-align: center;
+    font-size: 1.6rem;
+    color: black;
+    font-weight: 700;
+    width: 12rem;
+    margin-left: 1rem;
+    padding: 0.2rem;
+}
+
+.ResultadoClones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 2rem;
+    border-left-style: solid;
+    border-width: 0.2rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+@media (max-width: 1700px) {   
+    .TablaClones {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ResultadoClones {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-left-style: none;
+        border-top-style: solid;
+        text-align: center;
+    }
+
+    .ResultadoClones b {
+        padding-top: 1rem;
+    }
+}
