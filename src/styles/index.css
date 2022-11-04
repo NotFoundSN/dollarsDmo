@@ -2,8 +2,6 @@
 @import url('antd/dist/antd.css');
 @import url('./general.css');
 @import url('./navbar.css');
-@import url('./arena.css');
-@import url('./tabla.css');
 @import url('./clones.css');
 
 
@@ -28,7 +26,8 @@
 
 body {
     background-color: black;
-    background-image:  url('../assets/dollars.png');
+    background-image: url('../assets/dollars.png');
+    background-image: drop-shadow(2rem 2rem 1rem #4444dd);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;

@@ -1,3 +1,4 @@
+import { Row, Col } from "antd";
 import { useState } from "react"
 
 const tablaClones = [
@@ -35,58 +36,64 @@ export default function Clones() {
     return (
         <>
             <div className="fondo">
-                <div className="TablaClones">
-                    <div className="FormularioClones">
-                        <div className='campo'>
-                            <label htmlFor='tipoClon'>Tipo de clon</label>
-                            <select id="tipoClon" name="tipoClon" class="inputCampo">
-                                <option value="0">Ataque</option>
-                                <option value="1">Critico</option>
-                                <option value="2">Bloqueo</option>
-                                <option value="3">Evasion</option>
-                                <option value="4">Vida</option>
-                            </select>
-                        </div>
-                        <div className='campo'>
-                            <label htmlFor='cantClon'>Cantidad de clones</label>
-                            <select id="cantClon" class="inputCampo" name="cantClon">
-                                <option value="0">1</option>
-                                <option value="1">2</option>
-                                <option value="2">3</option>
-                                <option value="3">4</option>
-                                <option value="4">5</option>
-                                <option value="5">6</option>
-                                <option value="6">7</option>
-                                <option value="7">8</option>
-                                <option value="8">9</option>
-                                <option value="9">10</option>
-                                <option value="10">11</option>
-                                <option value="11">12</option>
-                                <option value="12">13</option>
-                                <option value="13">14</option>
-                                <option value="14">15</option>
-                            </select>
-                        </div>
-                        <div className='campo'>
-                            <label htmlFor='clonBase'>Stat base</label>
-                            <input type="number" id="clonBase" class="inputCampo" name="clonBase" />
-                        </div>
-                        <div className='campo'>
-                            <label htmlFor='clonClonado'>Stat clonado</label>
-                            <input type="number" id="clonClonado" class="inputCampo" name="clonClonado" />
-                        </div>
-                        <button className="botonNavBar" onClick={calcularClon}>Calcular</button>
-
-                    </div>
+                <div className="">
+                    <Row justify="center" >
+                        <Col xs={22} sm={18} md={18} lg={15} xl={12} className="">
+                            <div className="formularioClones fondoVioleta">
+                                <div className='textoBlanco campoClon'>
+                                    <label htmlFor='tipoClon'>Tipo de clon</label>
+                                    <select id="tipoClon" name="tipoClon" class="inputCampo">
+                                        <option value="0">Ataque</option>
+                                        <option value="1">Critico</option>
+                                        <option value="2">Bloqueo</option>
+                                        <option value="3">Evasion</option>
+                                        <option value="4">Vida</option>
+                                    </select>
+                                </div>
+                                <div className='textoBlanco campoClon'>
+                                    <label htmlFor='cantClon'>Cantidad de clones</label>
+                                    <select id="cantClon" class="inputCampo" name="cantClon">
+                                        <option value="0">1</option>
+                                        <option value="1">2</option>
+                                        <option value="2">3</option>
+                                        <option value="3">4</option>
+                                        <option value="4">5</option>
+                                        <option value="5">6</option>
+                                        <option value="6">7</option>
+                                        <option value="7">8</option>
+                                        <option value="8">9</option>
+                                        <option value="9">10</option>
+                                        <option value="10">11</option>
+                                        <option value="11">12</option>
+                                        <option value="12">13</option>
+                                        <option value="13">14</option>
+                                        <option value="14">15</option>
+                                    </select>
+                                </div>
+                                <div className='textoBlanco campoClon'>
+                                    <label htmlFor='clonBase'>Stat base</label>
+                                    <input type="number" id="clonBase" class="inputCampo" name="clonBase" />
+                                </div>
+                                <div className='textoBlanco campoClon'>
+                                    <label htmlFor='clonClonado'>Stat clonado</label>
+                                    <input type="number" id="clonClonado" class="inputCampo" name="clonClonado" />
+                                </div>
+                                <button className='cuerpoBoton textoBlanco botonClon'  onClick={calcularClon}>Calcular</button>
+                            </div>
+                        </Col>
+                    </Row>
                     {(clones > 0) ?
-                        <div className="ResultadoClones">
-                            <b>{(esperado==clones) ?'Perfecto':`Estas un ${(100-((clones * 100) / esperado)).toFixed(2)}% por debajo del perfecto`}</b>
-                            <b>Tenes {clones} de {esperado} que es el perfecto</b>
+                        <div className="fondo">
+                            <Row justify="center">
+                                <Col xs={22} sm={18} md={18} lg={15} xl={12} className="fondoVioleta formularioClones">
+                            <b className="textoBlanco">{(esperado == clones) ? 'Perfecto' : `Estas un ${(100 - ((clones * 100) / esperado)).toFixed(2)}% por debajo del perfecto`}</b>
+                            <b className="textoBlanco">Tenes {clones} de {esperado} que es el perfecto</b>
+                            </Col>
+                            </Row>
                         </div>
                         :
                         ''
                     }
-
                 </div>
             </div>
         </>

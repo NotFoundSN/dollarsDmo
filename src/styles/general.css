@@ -1,3 +1,7 @@
+.fondoVioleta {
+    background-color: var(--violetaMedioAlpha);
+}
+
 /* Texto */
 
 .textoBlanco {
@@ -27,11 +31,12 @@
 .inputCampo {
     background-color: var(--violetaClaro);
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: black;
     font-weight: 700;
-    width: 12rem;
-    margin-left: 1rem;
+    width: 50%;
+    min-width: 17rem;
+    margin-top: 0.2rem;
     padding: 0.2rem;
 }
 
@@ -54,6 +59,9 @@
 
 @media (min-width: 600px) {
     .textoBlanco {
+        font-size: 1.6rem;
+    }
+    .inputCampo {
         font-size: 1.6rem;
     }
     
