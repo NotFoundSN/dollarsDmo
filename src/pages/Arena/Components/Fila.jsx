@@ -1,12 +1,20 @@
-import { Row, Col } from 'antd';
-
-export default function Fila({data}) {
-    return (
-        <>
-            <Row justify="center">
-                <Col xs={4} lg={2} xl={3} xxl={4} className='tabla textoBlanco textoTabla'>{data.piso}</Col>
-                <Col xs={18} lg={16} xl={12} xxl={10} className='tabla textoBlanco textoTabla'>{data.digimons.map((digi, index) => { return (<b key={`digimon-${index}-piso-${data.piso}`}>{digi}</b>) })}</Col>
-            </Row>
-        </>
-    )
+export default function Fila({ data }) {
+	return (
+		<>
+			<div className="flex flex-row justify-evenly w-full h-12 items-center border-t border-purple-blue">
+				<div className="text-white w-1/3 text-center text-2xl font-bold drop-shadow-text">
+					{data.piso}
+				</div>
+				<div className="text-white w-2/3 text-center text-2xl font-bold drop-shadow-text">
+					{data.digimons.map((digi, index) => {
+						return (
+							<b key={`digimon-${index}-piso-${data.piso}`}>
+								{digi}
+							</b>
+						);
+					})}
+				</div>
+			</div>
+		</>
+	);
 }

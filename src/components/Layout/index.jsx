@@ -1,19 +1,20 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../NavBar";
-import React from "react";
-import { Col, Row } from 'antd';
-import banner from '@Assets/banner.jpg';
+import banner from "@Assets/digimonBanner2.png";
+import dollars from "@Assets/dollars.png";
 
 export default function Layout() {
-  return (
-    <React.Fragment>
-      <div className="banner">
-
-      </div>
-      <Row>
-      <Navbar />
-        <Col span={24}><Outlet /></Col>
-      </Row>
-    </React.Fragment>
-  )
+	return (
+		<>
+			<div className="flex flex-col items-center">
+				<img
+					src={dollars}
+					className=" fixed -z-10 h-full place-self-center"
+				/>
+				<img src={banner} className="w-full" />
+				<Navbar />
+				<Outlet />
+			</div>
+		</>
+	);
 }
