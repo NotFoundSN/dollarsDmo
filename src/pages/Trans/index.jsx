@@ -1,40 +1,117 @@
 import { Row, Col, Table } from "antd";
+import { useEffect } from "react";
 import { useState } from "react"
+import { useForm } from "react-hook-form";
 
-const tablaClones = [
-    [3, 15, 2, 12, 2],
-    [6, 30, 4, 24, 4],
-    [9, 45, 6, 36, 6],
-    [14, 70, 9, 56, 9],
-    [19, 95, 12, 76, 12],
-    [24, 120, 15, 96, 15],
-    [34, 170, 21, 136, 19],
-    [44, 220, 27, 176, 23],
-    [54, 270, 33, 216, 27],
-    [69, 345, 42, 276, 31],
-    [84, 420, 51, 336, 35],
-    [99, 495, 60, 396, 39],
-    [114, 570, 69, 456, 44],
-    [129, 645, 78, 516, 49],
-    [144, 720, 87, 596, 54]
-]
+const clones = ['', 0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60];
+const niveles = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130];
+//let Hatch = tam.value * idem.value;
 
-export default function Clones() {
+const columns = [
+    {
+        title: '',
+        dataIndex: 'level',
+        key: 'level',
+    },
+    {
+        title: '0',
+        dataIndex: '0',
+        key: '0',
+    },
+    {
+        title: '6',
+        dataIndex: '6',
+        key: '6',
+    },
+    {
+        title: '12',
+        dataIndex: '12',
+        key: '12',
+    },
+    {
+        title: '18',
+        dataIndex: '18',
+        key: '18',
+    },
+    {
+        title: '24',
+        dataIndex: '24',
+        key: '24',
+    },
+    {
+        title: '30',
+        dataIndex: '30',
+        key: '30',
+    },
+    {
+        title: '36',
+        dataIndex: '36',
+        key: '36',
+    },
+    {
+        title: '42',
+        dataIndex: '42',
+        key: '42',
+    },
+    {
+        title: '48',
+        dataIndex: '48',
+        key: '48',
+    },
+    {
+        title: '54',
+        dataIndex: '54',
+        key: '54',
+    },
+    {
+        title: '60',
+        dataIndex: '60',
+        key: '60',
+    },
+];
 
-    const [clones, setClones] = useState(0);
-    const [esperado, setEspera] = useState(0);
+/*(Clone + Level + 250) * Hatch Phase * Data Type / 1400=Transcendence Percent*/
+/*Per clone: 5, Per level: 1, Base: 250, Data Type: 1 for Low, 1.6 for Mid, Total experience required: 140,000*/
+//valor = ((clones[j] * 5) + (niveles[i]) + 250) * Hatch * tipo.value / 1400;
+//linea += '<td>' + valor.toFixed(2) + '</td>';
 
-    const calcularClon = () => {
-        const tipoClon = document.getElementById('tipoClon');
-        const cantClon = document.getElementById('cantClon');
-        const clonBase = document.getElementById('clonBase');
-        const clonClonado = document.getElementById('clonClonado');
-        setClones((clonClonado.value / clonBase.value * 100).toFixed(2));
-        setEspera(tablaClones[cantClon.value][tipoClon.value]);
-    }
+export default function Trans() {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [clones, setClones] = useState([]);
+    const [esperado, setEspera] = useState([]);
+    let calculados;
+    const onSubmit = (data) => {
+
+    };
+
+    useEffect(()=>{
+        console.log('willyManco');
+    }, [clones])
 
     return (
         <>
+            <Row justify="center">
+                <Col xs={22} sm={18} md={18} lg={15} xl={12} className="">
+                    <div className="formularioClones fondoVioleta">
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <div className='textoBlanco campoClon'>
+                                <label htmlFor='tipoData'>Tipo de clon</label>
+                                <select id="tipoData" name="tipoData" class="inputCampo" {...register("tipe")}>
+                                    <option value="0">Low</option>
+                                    <option value="1">High</option>
+                                </select>
+                            </div>
+                            <input placeholder="tama;o del digimon"  {...register("tam")} />
+                            <input placeholder="misma especie" {...register("idem")} />
+
+                            <button type="submit">Calcular</button>
+                        </form>
+                    </div>
+                </Col>
+            </Row>
+            {/*<Row>
+                <Col><Table dataSource={caculados} columns={columns} /></Col>
+            </Row>*/}
         </>
     )
 }
