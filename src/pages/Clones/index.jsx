@@ -28,13 +28,22 @@ export default function Clones() {
 		handleSubmit,
 	} = useForm();
 
-	const calcularClon = () => {
-		/*tipoClon = document.getElementById("tipoClon");
-		const cantClon = document.getElementById("cantClon");
-		const clonBase = document.getElementById("clonBase");
-		const clonClonado = document.getElementById("clonClonado");*/
-		//setClones(((clonClonado.value / clonBase.value) * 100).toFixed(2));
-		//setEspera(tablaClones[cantClon.value][tipoClon.value]);
+	const [calculated, setCalculated] = useState(null);
+	const [expected, setExpected] = useState(null);
+
+	const calcularClon = (data) => {
+		const valores = {
+			cantClon: parseInt(data.cantClon),
+			clonBase: parseFloat(data.clonBase),
+			clonCloned: parseFloat(data.clonCloned),
+			typeClon: parseInt(data.typeClon),
+		};
+		setCalculated(
+			valores.typeClon != 2
+				? ((valores.clonCloned / valores.clonBase) * 100).toFixed(2)
+				: valores.clonCloned
+		);
+		setExpected(tablaClones[valores.cantClon][valores.typeClon]);
 	};
 
 	const typeClonList = [
@@ -64,51 +73,67 @@ export default function Clones() {
 
 	return (
 		<>
-			<div className=" bg-purple-op mt-8 p-4 rounded-lg w-4/5 max-w-xl">
-				<div className="">
-					<Input
-						type="select"
-						name="typeClon"
-						label="Tipo de clon"
-						list={typeClonList}
-					/>
-					<Input
-						type="select"
-						name="cantClon"
-						label="Cantidad de clones"
-						list={cantClonList}
-					/>
-					<Input type="text" name="clonBase" label="Stat base" />
-					<Input
-						type="text"
-						name="clonClonado"
-						label="Stat clonado"
-					/>
-					<div className="flex flex-row justify-center">
-						<Button name="Calcular" />
-					</div>
+			<form
+				className=" bg-purple-op mt-8 p-4 rounded-lg w-4/5 max-w-xl"
+				onSubmit={handleSubmit(calcularClon)}
+			>
+				<Input
+					type="select"
+					name="typeClon"
+					label="Tipo de clon"
+					register={register}
+					list={typeClonList}
+				/>
+				<Input
+					type="select"
+					name="cantClon"
+					label="Cantidad de clones"
+					list={cantClonList}
+					register={register}
+				/>
+				<Input
+					type="number"
+					name="clonBase"
+					label="Stat base"
+					register={register}
+				/>
+				<Input
+					type="number"
+					name="clonCloned"
+					label="Stat clonado"
+					register={register}
+				/>
+				<div className="flex flex-row justify-center">
+					<Button name="Calcular" />
 				</div>
-				{/*clones > 0 ? (
-						<div className="fondo">
-									<b className="textoBlanco">
-										{esperado == clones
-											? "Perfecto"
-											: `Estas un ${(
-													100 -
-													(clones * 100) / esperado
-											  ).toFixed(
-													2
-											  )}% por debajo del perfecto`}
-									</b>
-									<b className="textoBlanco">
-										Tenes {clones} de {esperado} que es el
-										perfecto
-									</b>
-						</div>
+			</form>
+			{calculated > 0 ? (
+				<div className=" bg-purple-op mt-4 p-4 rounded-lg w-4/5 max-w-xl">
+					{expected == calculated ? (
+						<p className="text-white text-[1.5rem] font-bold text-center drop-shadow-text rotate-[720deg] duration-1000">
+							Perfecto
+						</p>
+					) : calculated < expected ? (
+						<>
+							<p className="text-white text-[1.5rem] font-bold drop-shadow-text">
+								{`Estas un ${(
+									100 -
+									(calculated * 100) / expected
+								).toFixed(2)}% por debajo del perfecto`}
+							</p>
+							<p className="text-white text-[1.5rem] font-bold drop-shadow-text">
+								{`Tenes ${calculated} de ${expected} que es el perfecto`}
+							</p>
+						</>
 					) : (
-						""
-					)*/}
-			</div>
+						<p className="text-white text-[1.5rem] font-bold drop-shadow-text text-center">
+							Mal ingreso de datos
+						</p>
+					)}
+				</div>
+			) : (
+				""
+			)}
 		</>
 	);
 }

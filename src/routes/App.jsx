@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "@Components";
-import { Arena, Clones, Trans, Torneo } from "@Pages";
+import { Arena, Clones, Trans, Unite } from "@Pages";
 
 function App() {
 	return (
@@ -10,8 +10,7 @@ function App() {
 					<Route path="arena" element={<Arena />} />
 					<Route path="clones" element={<Clones />} />
 					<Route path="trascender" element={<Trans />} />
-					<Route path="foro" />
-					<Route path="torneo/:id" element={<Torneo />} />
+					<Route path="unite" element={<Unite />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

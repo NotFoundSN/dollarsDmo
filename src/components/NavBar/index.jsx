@@ -20,8 +20,8 @@ export default function Layout() {
 				<NavLink className={buttonClass} to="/trascender">
 					<span className={spanClass}>Trascender</span>
 				</NavLink>
-				<NavLink className={buttonClass} to="/foro">
-					<span className={spanClass}>Foro</span>
+				<NavLink className={buttonClass} to="/unite">
+					<span className={spanClass}>Unite</span>
 				</NavLink>
 			</div>
 		</>
