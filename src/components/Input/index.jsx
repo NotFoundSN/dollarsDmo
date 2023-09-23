@@ -9,7 +9,7 @@ const text = ({
 	return (
 		<div className="flex flex-row w-full my-1">
 			<label
-				for={name}
+				htmlFor={name}
 				className="w-1/2 text-white text-[1.5rem] font-bold drop-shadow-text"
 			>
 				{label}
@@ -37,7 +37,7 @@ const select = ({
 	return (
 		<div className="flex flex-row w-full my-1">
 			<label
-				for={name}
+				htmlFor={name}
 				className="w-1/2 text-white text-[1.5rem] font-bold drop-shadow-text"
 			>
 				{label}
@@ -49,9 +49,9 @@ const select = ({
 				{...(validation ? register(name, validation) : register(name))}
 				{...otherProps}
 			>
-				{list.map((element) => {
+				{list.map((element, index) => {
 					return (
-						<option value={element.value} className="text-center font-bold">{element.text}</option>
+						<option value={element.value} className="text-center font-bold" key={`select-${name}-${index}`}>{element.text}</option>
 					);
 				})}
 			</select>
