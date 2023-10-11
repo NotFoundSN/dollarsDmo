@@ -4,9 +4,9 @@ import variable from "../../const/const";
 const data = variable.arenaRooms;
 
 const pruebaDiego = () => {
-	fetch("https://wsrfa.sannicolasciudad.gob.ar/prb/cors.php").then(
-		(response) => console.log(response)
-	);
+	fetch("https://wsrfa.sannicolasciudad.gob.ar/prb/cors.php")
+		.then((response) => response.json())
+		.then((data) => console.log(data));
 };
 
 export default function Arena() {
