@@ -4,6 +4,7 @@ const text = ({
 	label,
 	register,
 	validation = null,
+	errors,
 	...otherProps
 }) => {
 	return (
@@ -18,7 +19,7 @@ const text = ({
 				type={type}
 				name={name}
 				id={name}
-				className="w-1/2 text-center bg-purple-light border font-bold text-[1.5rem]"
+				className={`w-1/2 text-center bg-purple-light border ${errors[name] && "border-red"} font-bold text-[1.5rem]`}
 				{...(validation ? register(name, validation) : register(name))}
 				{...otherProps}
 			/>
@@ -59,7 +60,7 @@ const select = ({
 	);
 };
 
-const Input = ({ type, name, label, register, validation, ...otherProps }) => {
+const Input = ({ type, name, label, register, validation, errors, ...otherProps }) => {
 	const inputList = {
 		text: text,
 		number: text,
@@ -74,6 +75,7 @@ const Input = ({ type, name, label, register, validation, ...otherProps }) => {
 			label={label}
 			register={register}
 			validation={validation}
+			errors={errors}
 			{...otherProps}
 		/>
 	);

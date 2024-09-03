@@ -16,6 +16,9 @@ export default {
 			white: {
 				DEFAULT: "#f8f8ff",
 			},
+			red: {
+				DEFAULT: "#ff0000",
+			},
 			black: "#000000",
 		},
 		extend: {
