@@ -28,6 +28,19 @@ export default function Clones() {
 		handleSubmit,
 	} = useForm();
 
+	const validation = {
+		select: {
+			required: { value: true, message: "Campo requerido" },
+		},
+		text: {
+			required: { value: true, message: "Campo requerido" },
+			pattern: {
+				value: /^[+-]?([0-9]+([,.][0-9]*)?|[,.][0-9]+)$/,
+				message: "Ingrese un número válido",
+			},
+		},
+	};
+
 	const [calculated, setCalculated] = useState(null);
 	const [expected, setExpected] = useState(null);
 
@@ -70,7 +83,6 @@ export default function Clones() {
 		{ value: 13, text: "14" },
 		{ value: 14, text: "15" },
 	];
-
 	return (
 		<>
 			<form
@@ -92,16 +104,21 @@ export default function Clones() {
 					register={register}
 				/>
 				<Input
-					type="number"
+					type="text"
 					name="clonBase"
 					label="Stat base"
 					register={register}
+					validation={validation.text}
+					errors={errors}
+					
 				/>
 				<Input
-					type="number"
+					type="text"
 					name="clonCloned"
 					label="Stat clonado"
 					register={register}
+					validation={validation.text}
+					errors={errors}
 				/>
 				<div className="flex flex-row justify-center">
 					<Button name="Calcular" />
